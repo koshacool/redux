@@ -1,15 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-
+import { Provider, connect } from 'react-redux';
+import { createStore } from 'redux';
+import counter from './reducers';
 import App from './components/app.jsx';
+
+
+
+const store = createStore(counter);
 
 const rendering = () => {
 	render ( 
-		<AppContainer>
+		<Provider store={store}>
 			<App />
-		</AppContainer>, 
+		</Provider>, 
 		document.getElementById("root")
 	);
 }

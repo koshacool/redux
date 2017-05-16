@@ -1,15 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './styles/index.scss';
 
-export default class App extends React.Component {
-  render() {
+class App extends React.Component {
+
+  render() {      
     return (
-      <div>
-        <h1>It Works!</h1>
-        <p>This React project just works including <span className="redBg">module</span> local styles.</p>
-        <p>Enjoy!</p>
-        test
+      <div className="content">
+        My counter: state {this.props.counter}
+        <button onClick={this.props.onIcrement}> + </button>
+        <button onClick={this.props.onDecrement}> - </button>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state, props) => {
+  return {
+    counter: state.counter
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onIcrement() {
+      dispatch({ type: 'INCREMENT' })
+    },
+    onDecrement() {
+      dispatch({ type: 'DECREMENT' })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
