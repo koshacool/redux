@@ -3,8 +3,7 @@ import { render } from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import { createStore } from 'redux';
 import counter from './reducers';
-import App from './components/app.jsx';
-
+import App from './components/App.jsx';
 
 
 const store = createStore(counter);
@@ -21,8 +20,8 @@ const rendering = () => {
 rendering();
 
 if (module && module.hot) {
-  module.hot.accept('./components/app.jsx', () => {
-    const App = require('./components/app.jsx').default;
+  module.hot.accept('./components/App.jsx', () => {
+    const App = require('./components/App.jsx').default;
     rendering();
   });
 }
