@@ -24,7 +24,7 @@ export default class App extends React.Component {
             <Switch>
             <Redirect exact from="/" to="/counter"/>
             <Route path="/counter" component={Counter} />
-            <Route path="/poets" component={Counter} />  
+            <Route path="/poets" component={Poets} />  
             <Route  component={NotFound} />  
             </Switch>          
           </div>
