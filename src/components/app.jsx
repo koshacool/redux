@@ -3,18 +3,15 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
-
 import './styles/index.scss';
 import Counter from './Counter.jsx';
 import Poets from './Poets.jsx';
 import NotFound from './NotFound.jsx';
 
 export default class App extends React.Component {
-
   render() {      
     return (
-      <BrowserRouter>
-      
+      <BrowserRouter>      
         <div>
           <div className="header">
                 <Link to="/counter">Counter</Link>
@@ -29,7 +26,6 @@ export default class App extends React.Component {
             </Switch>          
           </div>
         </div>
-
       </BrowserRouter>
     )
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class Book extends React.Component {
-
   render() {
     const {image, title, id, year} = this.props.book;
     
